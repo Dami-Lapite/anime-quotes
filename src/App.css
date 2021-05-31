@@ -1,5 +1,5 @@
 .App{
-  background-color: #9ED0E6;
+  background-color: whitesmoke;
 }
 .container {
   display: flex;
@@ -10,16 +10,14 @@
 }
 
 .card{
-  position: fixed;
   width: max-content;
   min-width: 700px;
   max-width: 900px;
   padding: 20px;
   height: max-content;
-  background-color: #0B4F6C;
   border: 1;
   border-radius: 2%;
-  box-shadow: 0px 3px 6px #3c4447;
+  box-shadow: 0px 3px 6px #909091;
   text-align: center;
 }
 
@@ -27,5 +25,9 @@
   font-family: 'Girassol', cursive;
   font-size: 180%;
   line-height: 1.8;
+  color: white;
+}
+
+.hint{
   color: white;
 }
