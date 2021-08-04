@@ -46,6 +46,20 @@ class App extends Component {
     });
   }
 
+  copyToClipboard = ()=>{
+    if (this.state.hasQuote) {
+      const el = document.createElement('textarea');
+      el.value = this.state.quote;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      alert("Quote is copied to clipboard")
+    }else{
+      alert("No quote to copy :(")
+    }
+  }
+
   toggleShow = ()=>{
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
@@ -60,18 +74,29 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-          <div className="card"  style={{...{backgroundColor: this.state.backgroundColor}}} onClick={this.toggleShow}>
-            <p className="quoteText">"{this.state.quote}"</p>
-            <small className="hint">Click the card to see who said this !</small>
+          <div className="card-container">
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+              <div className="card"  style={{...{backgroundColor: this.state.backgroundColor}}} onClick={this.toggleShow}>
+                <p className="quoteText" id="quoteText">"{this.state.quote}"</p>
+                <small className="hint">Click the card to see who said this !</small>
+              </div>
+              <div className="card" style={{...{backgroundColor: this.state.backgroundColor}}} onClick={this.toggleShow}>
+                <p className="quoteText">{this.state.character}<br></br>{this.state.anime}</p>
+              </div>
+            </ReactCardFlip>
+            <button onClick={this.copyToClipboard} className="copy-button">COPY QUOTE&emsp;<i className="far fa-clipboard"></i></button>
           </div>
-          <div className="card" style={{...{backgroundColor: this.state.backgroundColor}}} onClick={this.toggleShow}>
-            <p className="quoteText">{this.state.character}<br></br>{this.state.anime}</p>
-          </div>
-          </ReactCardFlip>
-          <div>
+          <div className="button-container">
             <IconButton onClick={this.setQuote} ><NavigateNextIcon style={{...{color: this.state.backgroundColor},fontSize:'200%'}}/></IconButton>
           </div>
+        </div>
+        <div className="footer">
+          <p className="footerText">
+          <span><a className="fab fa-github" 
+          style={{display: "table-cell"}} href="https://github.com/Dami-Lapite/anime-quotes" target="_blank"></a></span>&emsp;
+          <span><a className="fas fa-external-link-alt project-icon"
+          style={{display: "table-cell"}} href="https://www.damilapite.com/" target="_blank"></a></span>
+          &emsp;Designed and Developed by Dami Lapite - 2021</p>
         </div>
       </div>
     );
