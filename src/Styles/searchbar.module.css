@@ -1,0 +1,52 @@
+.searchBar{
+    text-align: left;
+    font-size: 1.05em;
+    padding: 0em 0.5em;
+    width: 41em;
+    height: 3em;
+    border: 0;
+    border-bottom: 0.08em solid #bebebe;
+    outline: none;
+}
+
+.searchBar:focus{
+    border-bottom: 0.1em solid #000000;
+}
+    @media screen and (max-width: 1280px) {
+
+        .searchBar {
+            max-width: calc(100% - 6em);
+        }
+
+    }
+
+	@media screen and (max-width: 980px) {
+      
+        .searchBar {
+            max-width: calc(100% - 8em);
+        }
+
+    }  
+
+	@media screen and (max-width: 736px) {
+
+        .searchBar {
+            max-width: calc(100% - 2em);
+        }
+      
+	}
+
+	@media screen and (max-width: 360px) {
+      .searchBar{
+          max-width: 100%;
+      }
+	}
+
+.searchBarContainer{
+    margin: 0em auto 1em auto ;
+    background-color: #ffffff;
+}
+
+.searchBarContainer i {
+    color: #bebebe;
+}

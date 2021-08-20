@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import IconButton from '@material-ui/core/IconButton';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Search from './Pages/Search';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import './App.css';
+import './Styles/App.css';
 
 class App extends Component { 
 
@@ -15,8 +18,8 @@ class App extends Component {
       hasQuote: false,
       isFlipped: false,
       colorIndex: 0,
-      backgroundColor: '#348AA7',
-      colorArray: ['#DB5A42','#FFD275','#A8DCD9','#E2A3C7','#B5CA8D','#DB6C79','#9BC1BC','#9C95DC'],
+      backgroundColor: '#ccd5ae',
+      colorArray: ['#cdb4db','#83c5be','#ff87ab','#e6b48a','#99c1de','#d0b4cd','#e8a598','#ccd5ae'],
     }
   }
 
@@ -72,6 +75,9 @@ class App extends Component {
   }
   render (){
     return (
+      <Router>
+      <Route exact path="/"
+      render={props => (
       <div className="App">
         <div className="container">
           <div className="card-container">
@@ -85,6 +91,7 @@ class App extends Component {
               </div>
             </ReactCardFlip>
             <button onClick={this.copyToClipboard} className="copy-button">COPY QUOTE&emsp;<i className="far fa-clipboard"></i></button>
+            <Link to="/search" className="search-button">GET QUOTES BY ANIME TITLE&emsp;<i className="fas fa-search"></i></Link>
           </div>
           <div className="button-container">
             <IconButton onClick={this.setQuote} ><NavigateNextIcon style={{...{color: this.state.backgroundColor},fontSize:'200%'}}/></IconButton>
@@ -92,13 +99,16 @@ class App extends Component {
         </div>
         <div className="footer">
           <p className="footerText">
-          <span><a className="fab fa-github" 
+          <span><a className="fab fa-github icon" 
           style={{display: "table-cell"}} href="https://github.com/Dami-Lapite/anime-quotes" target="_blank"></a></span>&emsp;
-          <span><a className="fas fa-external-link-alt project-icon"
+          <span><a className="fas fa-external-link-alt icon"
           style={{display: "table-cell"}} href="https://www.damilapite.com/" target="_blank"></a></span>
           &emsp;Designed and Developed by Dami Lapite - 2021</p>
         </div>
       </div>
+      )}/>
+      <Route path="/search" component={Search} />
+      </Router>
     );
   }
 }
