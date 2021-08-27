@@ -10,9 +10,19 @@
 }
 
 .searchBar:focus{
-    border-bottom: 0.1em solid #000000;
+    border-bottom: 0.1em solid #707070;
 }
-    @media screen and (max-width: 1280px) {
+
+.searchBarContainer{
+    margin: 0em auto 1em auto ;
+    background-color: #ffffff;
+}
+
+.searchBarContainer i {
+    color: #bebebe;
+}
+
+@media screen and (max-width: 1280px) {
 
         .searchBar {
             max-width: calc(100% - 6em);
@@ -23,7 +33,7 @@
 	@media screen and (max-width: 980px) {
       
         .searchBar {
-            max-width: calc(100% - 8em);
+            max-width: 100%;
         }
 
     }  
@@ -31,7 +41,12 @@
 	@media screen and (max-width: 736px) {
 
         .searchBar {
-            max-width: calc(100% - 2em);
+            width: calc(100%-2em);
+            padding: 0;
+        }
+
+        .searchBarContainer{
+            max-width: 100%;
         }
       
 	}
@@ -41,12 +56,3 @@
           max-width: 100%;
       }
 	}
-
-.searchBarContainer{
-    margin: 0em auto 1em auto ;
-    background-color: #ffffff;
-}
-
-.searchBarContainer i {
-    color: #bebebe;
-}

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function searchFunction(searchTerm, anime) {
     if(searchTerm === ""){
         return true;

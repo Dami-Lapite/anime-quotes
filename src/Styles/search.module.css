@@ -60,16 +60,20 @@
     padding: 0em 0.7em;
     border-radius: 0.5em;
     margin: 0.25em auto;
+    font-size: 1.1em;
+    font-weight: 600;
     background-color: #f5f4f4;
 }
 .gridRow:hover, .gridRow:active{
-    border: 0.08em solid #777777;
+    background-color: #dfdfdf;
 }
 
 .selectedRow{
     color: #5f5f5f;
     padding: 0em 0.7em;
     border-radius: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
     margin: 0.25em auto;
     background-color: #d8f3dc;
 }
@@ -79,12 +83,13 @@
     margin: 1em auto;
     padding: 1em;
     color: #ffffff;
-    background-color: #949494;
+    background-color: #4b4b4b;
     border: 0.1em solid white;
-    border-radius: 2em;
-    font-size: 1em;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
 }
 
 .searchButton:hover, .searchButton:active{
-    font-size: 1.05em;
+    font-size: 1.2em;
 }
