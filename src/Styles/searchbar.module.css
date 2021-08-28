@@ -41,18 +41,14 @@
 	@media screen and (max-width: 736px) {
 
         .searchBar {
-            width: calc(100%-2em);
-            padding: 0;
-        }
-
-        .searchBarContainer{
             max-width: 100%;
+            padding: 0;
         }
       
 	}
 
 	@media screen and (max-width: 360px) {
       .searchBar{
-          max-width: 100%;
+         max-width: 100%;
       }
 	}
