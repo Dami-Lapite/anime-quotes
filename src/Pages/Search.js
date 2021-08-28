@@ -19,7 +19,7 @@ export default class Search extends Component {
             selectedTitle: "",
             quotes: [],
             isFlipped: [false,false,false,false,false,false,false,false,false,false],
-            colorArray: ['#cdb4db','#83c5be','#ff87ab','#e6b48a','#99c1de','#d0b4cd','#e8a598','#ccd5ae'],
+            colorArray: ['#cdb4db','#83c5be','#ff87ab','#e6b48a','#99c1de','#d0b4cd','#e8a598','#ccd5ae','#b8bedd'],
         }
     }
 
@@ -57,6 +57,20 @@ export default class Search extends Component {
         let temp = !this.state.isFlipped[index];
         tempArr[index] = temp;
         this.setState({isFlipped: tempArr});
+    }
+
+    copyToClipboard = (index)=>{
+        if (this.state.quotes.length > 0) {
+            const el = document.createElement('textarea');
+            el.value = this.state.quotes[index].quote;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert("Quote is copied to clipboard")
+            }else{
+            alert("No quote to copy :(")
+        }
     }
 
     resetSearch = ()=>{
@@ -100,11 +114,14 @@ export default class Search extends Component {
                         (<div>
                             {this.state.quotes.map((quote,i) => (<div key={i} >
                                 <ReactCardFlip isFlipped={this.state.isFlipped[i]} flipDirection="vertical">
-                                    <div className={styles.quoteCard}  style={{...{backgroundColor: this.state.colorArray[i%8], margin:"0em auto 0.5em auto"}}} onClick={() => this.toggleShow(i)}>
+                                    <div className={styles.quoteCard}  style={{...{backgroundColor: this.state.colorArray[i%9], margin:"0em auto 0.5em auto"
+                                        , boxShadow:"0 0 0.5em"+this.state.colorArray[i%8]}}} onClick={() => this.toggleShow(i)}>
                                         <p className="quoteText">"{quote.quote}"</p>
                                         <small className="hint">Click the card to see who said this !</small>
+                                        <i className="far fa-copy copy-icon" onClick={()=> this.copyToClipboard(i)}></i>
                                     </div>
-                                    <div className={styles.quoteCard} style={{...{backgroundColor: this.state.colorArray[i%8], margin:"0em auto 0.5em auto"}}} onClick={() => this.toggleShow(i)}>
+                                    <div className={styles.quoteCard} style={{...{backgroundColor: this.state.colorArray[i%9], margin:"0em auto 0.5em auto"
+                                        , boxShadow:"0 0 0.5em"+this.state.colorArray[i%8]}}} onClick={() => this.toggleShow(i)}>
                                         <p className="quoteText">{quote.character}<br></br>{quote.anime}</p>
                                     </div>
                                 </ReactCardFlip>
