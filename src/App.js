@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import IconButton from '@material-ui/core/IconButton';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Search from './Pages/Search';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import './Styles/App.css';
 
 class App extends Component { 
@@ -18,8 +16,8 @@ class App extends Component {
       hasQuote: false,
       isFlipped: false,
       colorIndex: 0,
-      backgroundColor: '#ccd5ae',
-      colorArray: ['#cdb4db','#83c5be','#ff87ab','#e6b48a','#99c1de','#d0b4cd','#e8a598','#ccd5ae'],
+      backgroundColor: '#b8bedd',
+      colorArray: ['#cdb4db','#83c5be','#ff87ab','#e6b48a','#99c1de','#d0b4cd','#e8a598','#ccd5ae','#b8bedd'],
     }
   }
 
@@ -81,21 +79,19 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="card-container">
-            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-              <div className="card"  style={{...{backgroundColor: this.state.backgroundColor}}} onClick={this.toggleShow}>
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal" >
+              <div className="card"  style={{...{backgroundColor: this.state.backgroundColor, boxShadow:"0 0 0.5em"+this.state.backgroundColor}}} onClick={this.toggleShow}>
                 <p className="quoteText" id="quoteText">"{this.state.quote}"</p>
                 <small className="hint">Click the card to see who said this !</small>
+                <i className="far fa-copy copy-icon" onClick={this.copyToClipboard}></i>
               </div>
-              <div className="card" style={{...{backgroundColor: this.state.backgroundColor}}} onClick={this.toggleShow}>
+              <div className="card" style={{...{backgroundColor: this.state.backgroundColor, boxShadow:"0 0 0.5em"+this.state.backgroundColor}}} onClick={this.toggleShow}>
                 <p className="quoteText">{this.state.character}<br></br>{this.state.anime}</p>
               </div>
             </ReactCardFlip>
-            <button onClick={this.copyToClipboard} className="copy-button">COPY QUOTE&emsp;<i className="far fa-clipboard"></i></button>
-            <Link to="/search" className="search-button">GET QUOTES BY ANIME TITLE&emsp;<i className="fas fa-search"></i></Link>
+            <div className="search-button-container"><Link to="/search" className="search-button">Get quotes by anime title&emsp;<i className="fas fa-search"></i></Link></div>
           </div>
-          <div className="button-container">
-            <IconButton onClick={this.setQuote} ><NavigateNextIcon style={{...{color: this.state.backgroundColor},fontSize:'200%'}}/></IconButton>
-          </div>
+          <i className="fas fa-arrow-right next-icon" onClick={this.setQuote} style={{...{color: this.state.backgroundColor}}} ></i>
         </div>
         <div className="footer">
           <p className="footerText">

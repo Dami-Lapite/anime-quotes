@@ -47,14 +47,14 @@
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding-top: 4em;
+  justify-content: center;
+  margin-top: 5em;
 }
 
 .card-container{
 	display: inline-block;
   width: max-content;
-  margin: 0 auto;
-  padding: 3em;
+  padding: 2em 0em;
   position: relative;
 }
 
@@ -62,22 +62,20 @@
   width: 50em;
   line-height: normal;
   max-width: 100%;
-  padding: 4em 0;
+  padding: 0.3em;
   height: max-content;
   border: 1;
-  border-radius: 0.25em;
-  box-shadow: 0em 0.1em 0.1em #909091;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em rgb(151, 151, 151) ;
   text-align: center;
 }
-.button-container{
-  display: block;
-  width: max-content;
-}
+
 @media screen and (max-width: 1280px) {
 
 			.card-container {
-				padding: 3em 0;
+				padding: 1em 0;
 				max-width: calc(100% - 6em);
+        margin: 0 auto; 
 			}
 
 		}
@@ -89,8 +87,9 @@
 
 			.card-container {
         display: block;
-				padding: 1.5em 1em;
+				padding: 1em 0em;
 				max-width: calc(100% - 8em);
+        margin: 0 auto; 
 			}
 
       .button-container{
@@ -108,10 +107,15 @@
         display: block;
 				padding: 1em 0;
 				max-width: calc(100% - 2em);
+        margin: 0 auto; 
 			}
 
       .button-container{
         display: block;
+      }
+
+      .card{
+        padding: 0.1em;
       }
 		}
 
@@ -124,62 +128,86 @@
         display: block;
 				padding: 1em 0;
 				max-width: 100%;
+        margin: 0 auto; 
 			}
       .button-container{
         display: block;
       }
+
+      .card{
+        padding: 0.1em;
+      }
 		}
 
 .quoteText{
-  font-family: 'Neucha', cursive;
-  font-size: 180%;
+  font-family: 'Klee One', cursive;
+  font-size: 1.5em;
+  font-weight: 600;
   line-height: 1.8;
-  color: #505050;
+  color: #4b4b4b;
 }
 
 .hint{
   color: #505050;
 }
 
-.copy-button{
+.copy-icon{
   position: absolute;
-  right: 3.5em;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 0.25em;
-  border: 0.15em solid #888888;
-  background-color: whitesmoke;
-  box-shadow: 0.15em 0.15em #888888;
-  color: #777777;
+  right: 0.2em;
+  bottom: 0.2em;
+  font-size: 1.5em;
+  margin: 0.5em;
+  color: #4b4b4b;
 }
-.copy-button:hover{
-  background-color: #e3eaeb;
+.copy-icon:hover{
+  color: #ffffff;
 }
-.copy-button:active{
-  background-color: #e3eaeb;
+.copy-icon:active{
+  color: #ffffff;
+}
+
+.search-button-container{
+  margin: 2em auto;
+  text-align: center;
+  color: #ffffff;
 }
 
 .search-button{
-  position: absolute;
-  left: 3.5em;
-  margin: 1em;
-  padding: 0.5em;
-  font-size: 0.75em;
-  border-radius: 0.25em;
-  border: 0.15em solid #888888;
-  background-color: whitesmoke;
-  box-shadow: 0.15em 0.15em #888888;
-  color: #777777;
-}
-.search-button:hover{
-  background-color: #e3eaeb;
-}
-.search-button:active{
-  background-color: #e3eaeb;
+  padding: 0.5em 0.7em;
+  font-size: 1em;
+  border-radius: 0.35em;
+  background-color: #4b4b4b;
+  color: #ffffff;
 }
 
-#Link:hover{
-  color: #777777;
+.search-button:hover{
+  box-shadow: 0 0 0.5em rgb(107, 107, 107) ;
+}
+
+a:link{
+  color: #ffffff;
+  text-decoration: none;
+}
+a:visited{
+  color: #ffffff;
+  text-decoration: none;
+}
+a:hover{
+  color: #ffffff;
+}
+a:active{
+  color: #ffffff;
+}
+
+.next-icon{
+  margin-left: 0.5em;
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.next-icon:hover{
+  border-radius: 50%;
+  background-color: #f3f3f3;
 }
 
 @media screen and (max-width: 980px) {
@@ -212,19 +240,13 @@
 	font-weight: 600;
 }
 
-a:link{
+.icon:link{
   color: #777777;
   text-decoration: none;
 }
-a:visited{
+.icon:visited{
   color: #777777;
   text-decoration: none;
-}
-a:hover{
-  color: #777777;
-}
-a:active{
-  color: #777777;
 }
 .icon:hover{
   color: rgb(248, 135, 192);
