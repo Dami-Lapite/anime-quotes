@@ -1,11 +1,12 @@
 *{
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .App{
-  background-color: #ffffff;
-  height: 100vh;
+  background-color: #ececec;
+  min-height: 100vh;
   overflow-y: scroll;
+  position: relative;
 }
 @media screen and (max-width: 1680px) {
 
@@ -39,6 +40,7 @@
 
 		}
 .container {
+  min-height: 100vh;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -48,11 +50,10 @@
   -ms-align-items: center;
   align-items: center;
   justify-content: center;
-  margin-top: 5em;
 }
 
 .card-container{
-	display: inline-block;
+	display: block;
   width: max-content;
   padding: 2em 0em;
   position: relative;
@@ -60,14 +61,15 @@
 
 .card{
   width: 50em;
+  background-color: #ffffff;
   line-height: normal;
   max-width: 100%;
   padding: 0.3em;
   height: max-content;
-  border: 1;
+  border: 0.1em solid #444444;
   border-radius: 0.5em;
-  box-shadow: 0 0 0.5em rgb(151, 151, 151) ;
   text-align: center;
+  position: relative;
 }
 
 @media screen and (max-width: 1280px) {
@@ -77,6 +79,11 @@
 				max-width: calc(100% - 6em);
         margin: 0 auto; 
 			}
+
+      .card {
+        max-width: calc(100% - 6em);
+        padding: 2em;
+      }
 
 		}
 
@@ -94,6 +101,11 @@
 
       .button-container{
         display: block;
+      }
+
+      .card {
+        max-width: calc(100% - 8em);
+        padding: 1em;
       }
 
 		}
@@ -115,7 +127,8 @@
       }
 
       .card{
-        padding: 0.1em;
+        max-width: calc(100% - 2em);
+        padding: 0.5em;
       }
 		}
 
@@ -135,20 +148,20 @@
       }
 
       .card{
-        padding: 0.1em;
+        max-width: 100%;
+        padding: 0.5em;
       }
 		}
 
 .quoteText{
-  font-family: 'Klee One', cursive;
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.8;
-  color: #4b4b4b;
+  color: #444444;
 }
 
 .hint{
-  color: #505050;
+  color: #444444;
 }
 
 .copy-icon{
@@ -157,17 +170,54 @@
   bottom: 0.2em;
   font-size: 1.5em;
   margin: 0.5em;
-  color: #4b4b4b;
+  color: #444444;
 }
 .copy-icon:hover{
-  color: #ffffff;
+  color: rgb(248, 135, 192);
 }
 .copy-icon:active{
-  color: #ffffff;
+  color: rgb(248, 135, 192);
 }
 
+.copy-icon span{
+    display: block;
+    position: absolute;
+    top: -2.75em;
+    left: -2em;
+    background: rgba(68,68,68,0.85);
+    padding: 0em 0.5em;
+    color: #ffffff;
+    border-radius: 0.25em;
+    font-size: 0.5em;
+    width: max-content;
+    height: 2em;
+    line-height: 2em;
+    opacity: 0;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    -ms-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+
+.copy-icon span:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    margin-left: -0.6em;
+    border-left: solid 0.6em transparent;
+    border-right: solid 0.6em transparent;
+    border-top: solid 0.6em rgba(68,68,68,0.85);
+}
+
+.copy-icon:hover span{
+    opacity: 1;
+}
+
+
 .search-button-container{
-  margin: 2em auto;
+  margin: 2.5em auto;
   text-align: center;
   color: #ffffff;
 }
@@ -175,13 +225,14 @@
 .search-button{
   padding: 0.5em 0.7em;
   font-size: 1em;
+  font-weight: 500;
   border-radius: 0.35em;
-  background-color: #4b4b4b;
+  background-color: #222222;
   color: #ffffff;
 }
 
 .search-button:hover{
-  box-shadow: 0 0 0.5em rgb(107, 107, 107) ;
+  box-shadow: 0 0 0.5em rgb(10, 10, 10) ;
 }
 
 a:link{
@@ -207,7 +258,7 @@ a:active{
 
 .next-icon:hover{
   border-radius: 50%;
-  background-color: #f3f3f3;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 @media screen and (max-width: 980px) {
@@ -228,24 +279,26 @@ a:active{
 
 /*Footer*/
 .footer{
+  position: absolute;
+  bottom: 0;
   display: block;
 	width: 100%;
-	margin: 0 auto;
+	margin: 0.5em auto;
 }
 .footerText{
 	padding: 0.25em;
 	text-align: center;
 	font-size: 100%;
-	color: #777777;
+	color: #444444;
 	font-weight: 600;
 }
 
 .icon:link{
-  color: #777777;
+  color: #444444;
   text-decoration: none;
 }
 .icon:visited{
-  color: #777777;
+  color: #444444;
   text-decoration: none;
 }
 .icon:hover{
@@ -253,4 +306,10 @@ a:active{
 }
 .icon:active{
   color: rgb(248, 135, 192);
+}
+
+.error{
+  color: rgb(170, 15, 15);
+  font-size: 1em;
+  font-weight: 500;
 }
