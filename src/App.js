@@ -91,7 +91,7 @@ class App extends Component {
                 <p className="quoteText">{this.state.character}<br></br>{this.state.anime}</p>
               </div>
             </ReactCardFlip>
-            <div className="search-button-container"><Link to="/search" className="search-button">Search quotes by anime title&emsp;<i className="fas fa-search"></i></Link></div>
+            <div className="search-button-container"><Link to="/search" className="search-button">Search quotes by anime title / character&emsp;<i className="fas fa-search"></i></Link></div>
           </div>
           <i className="fas fa-arrow-right next-icon" onClick={this.setQuote} style={{...{color: this.state.backgroundColor}}} ></i>
         </div>
