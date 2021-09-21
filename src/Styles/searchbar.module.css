@@ -24,11 +24,11 @@
 @media screen and (max-width: 1280px) {
 
         .searchBarContainer {
-            max-width: 100%;
+            max-width: calc(100% - 4em);
         }
 
         .searchBar {
-            max-width: calc(100% - 6em);
+            max-width: 100%;
         }
 
     }
@@ -36,11 +36,12 @@
 	@media screen and (max-width: 980px) {
 
         .searchBarContainer {
-            max-width: 100%;
+            max-width: calc(100% - 2em);
         }
       
         .searchBar {
             max-width: 100%;
+            padding: 0;
         }
 
     }  
@@ -48,7 +49,7 @@
 	@media screen and (max-width: 736px) {
 
         .searchBarContainer {
-            max-width: 100%;
+            max-width: calc(100% - 1em);
             padding: 0;
         }
 
@@ -61,7 +62,7 @@
 
 	@media screen and (max-width: 360px) {
         .searchBarContainer {
-            max-width: 100%;
+            max-width: calc(100% - 1em);
             padding: 0;
         }
 

@@ -80,6 +80,11 @@
         margin: 0 auto; 
 			}
 
+      .card {
+        max-width: calc(100% - 6em);
+        padding: 2em;
+      }
+
 		}
 
 		@media screen and (max-width: 980px) {
@@ -96,6 +101,11 @@
 
       .button-container{
         display: block;
+      }
+
+      .card {
+        max-width: calc(100% - 8em);
+        padding: 1em;
       }
 
 		}
@@ -117,7 +127,8 @@
       }
 
       .card{
-        padding: 0.1em;
+        max-width: calc(100% - 2em);
+        padding: 0.5em;
       }
 		}
 
@@ -137,7 +148,8 @@
       }
 
       .card{
-        padding: 0.1em;
+        max-width: 100%;
+        padding: 0.5em;
       }
 		}
 
@@ -149,7 +161,7 @@
 }
 
 .hint{
-  color: #505050;
+  color: #444444;
 }
 
 .copy-icon{

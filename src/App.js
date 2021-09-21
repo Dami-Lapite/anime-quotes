@@ -101,7 +101,7 @@ class App extends Component {
           style={{display: "table-cell"}} href="https://github.com/Dami-Lapite/anime-quotes" target="_blank"></a></span>&emsp;
           <span><a className="fas fa-external-link-alt icon"
           style={{display: "table-cell"}} href="https://www.damilapite.com/" target="_blank"></a></span>
-          &emsp;Designed and Developed by Dami Lapite - 2021</p>
+          &emsp;Designed & Developed by Dami Lapite - 2021</p>
         </div>
       </div>
       )}/>

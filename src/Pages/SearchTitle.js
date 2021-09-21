@@ -156,9 +156,10 @@ export default class SearchTitle extends Component {
                                 </Scrollbars>
                                 </ImageList>
                                 {this.hasSelection() ? 
-                                <button onClick={this.searchQuotes} className={styles.searchButton}>Get quotes from :&emsp; {this.state.selectedTitle}</button>
+                                <button onClick={this.searchQuotes} className={styles.searchButton}>Get quotes from : {this.state.selectedTitle}</button>
                                 :
                                 <button className={styles.searchButton}>Select Anime Title</button>}
+                                <p className="hint">If the english title isn't listed,<br/> try searching for the japanese (hepburn romanized) title</p>
                             </div>)
                             : null}
                         </div>)}
