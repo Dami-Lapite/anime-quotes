@@ -253,10 +253,18 @@ a:active{
 }
 
 @media screen and (max-width: 980px) {
+      .next-icon{
+        margin-bottom: 1.7em;
+      }
+
       .copy-button{
         position: relative;
         display: block;
         right: auto;
+      }
+
+      .search-button-container{
+        margin-bottom: 0.5em;
       }
 
 			.search-button{

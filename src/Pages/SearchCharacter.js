@@ -26,7 +26,7 @@ export default class SearchCharacter extends Component {
     }
 
     prepURL = ()=>{
-        let character = this.state.searchTerm;
+        let character = this.state.searchTerm.trim();
         let url = character.replace(/\s+/g, '+').toLowerCase();
         return url;
     }

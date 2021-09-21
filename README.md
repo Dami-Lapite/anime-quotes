@@ -1,6 +1,9 @@
 # anime-quotes
 
-A simple react app that displays a random anime quote on a card component (with a dynamic background). When the card is clicked, the component does a flip animation and displays the quoted character and anime.
+A react app that lets the user browse through (and copy) random anime quotes or search for quotes from a specific anime or character.
+I used data from an open source anime api. When a quote card is clicked, the component does a flip animation and displays the quoted character and anime.
+
+## Website URL : https://anime-quotes-2021.uc.r.appspot.com/ 
 
 API used : https://animechan.vercel.app/
 
