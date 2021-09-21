@@ -99,10 +99,6 @@
         margin: 0 auto; 
 			}
 
-      .button-container{
-        display: block;
-      }
-
       .card {
         max-width: calc(100% - 8em);
         padding: 1em;
@@ -122,10 +118,6 @@
         margin: 0 auto; 
 			}
 
-      .button-container{
-        display: block;
-      }
-
       .card{
         max-width: calc(100% - 2em);
         padding: 0.5em;
@@ -143,9 +135,6 @@
 				max-width: 100%;
         margin: 0 auto; 
 			}
-      .button-container{
-        display: block;
-      }
 
       .card{
         max-width: 100%;
@@ -217,6 +206,8 @@
 
 
 .search-button-container{
+  width: fit-content;
+  max-width: calc(100%-2em);
   margin: 2.5em auto;
   text-align: center;
   color: #ffffff;
